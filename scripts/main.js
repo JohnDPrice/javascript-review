@@ -3,7 +3,7 @@ let favoriteSandwich = "grilled chicken";
 let leastFavoriteSandwich = {
      sandwichName: "bologna",
      price: 10,
-     ingredients: ["bread", "bologna", "mayo"]
+     ingredients: ["bread", "bologna", "mayo", "cheese"]
  };
 
 // console.log(leastFavoriteSandwich.ingredients[0]);
@@ -102,17 +102,17 @@ sandwichSentence();
 // 2. Write a function that accepts a string of sandwich name, a number of price, and an array of ingredients. The function should build an object that represents a sandwich and add it to the array.
 
 
-function buildNewSandwich(sandwichName, price, ingredientsArray) {
-    let newSandwichObject = {
-        sandwichName, 
-        price,
-        ingredientsArray
-    };
-    sandwichMenu.push(newSandwichObject);
-    console.log(sandwichMenu) 
-}
+// function buildNewSandwich(sandwichName, price, ingredientsArray) {
+//     let newSandwichObject = {
+//         sandwichName, 
+//         price,
+//         ingredientsArray
+//     };
+//     sandwichMenu.push(newSandwichObject);
+//     console.log(sandwichMenu) 
+// }
 
-buildNewSandwich("Taco Sandwich", 5, ["shell", "cheese", "taco meat"])
+// buildNewSandwich("Taco Sandwich", 5, ["shell", "cheese", "taco meat"])
 
 
 
@@ -146,3 +146,48 @@ console.log(cheapSandwichArray)
 
 
 
+// 4. Write a "Dairy Free" function that loops through your array of sandwiches and returns a new array of sandwiches that do NOT include cheese in their ingredient list. (Make sure you have at least one sandwich with cheese so you can test if this function works.)
+
+function dairyFree() {
+    // Empty arrays to push cheese or non-cheese sandwiches into
+    let noCheeseArray = [];
+    let cheeseArray = [];
+    // Loop to iterate through each sandwich in the menu
+    for(let m = 0; m < sandwichMenu.length; m++) {
+        // Conditional to see which sandwiches include cheese
+        if(sandwichMenu[m].ingredients.includes("cheese")){
+            // Pushes sandwiches to cheeseArray IF they include cheese
+            cheeseArray.push(sandwichMenu[m])
+        } else {
+            // Pushes sandwiches to noCheeseArray IF they do not include cheese
+            noCheeseArray.push(sandwichMenu[m])
+        }
+    }
+    
+    return noCheeseArray;
+}
+
+// Stores the function dairFree() in a variable: cheeseFilter
+let cheeseFilter = dairyFree();
+
+console.log(cheeseFilter)
+
+
+// let dairyFree = () => {
+//     let dairyFreeArray = [];
+
+    
+//         for(let x = 0; x < sandwichMenu.length; x++){
+//             if(sandwichMenu[x].ingredients.includes("cheese")){
+//                 console.log(`${sandwichMenu[x].sandwichName} contains dairy`)
+//             } else {
+//             dairyFreeArray.push(sandwichMenu[x])
+//         }
+//     }
+
+//     return dairyFreeArray
+// }
+
+// let someVariable = dairyFree()
+
+// console.log(someVariable)
