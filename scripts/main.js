@@ -173,6 +173,12 @@ let cheeseFilter = dairyFree();
 console.log(cheeseFilter)
 
 
+
+
+
+
+// Matt's DairyFree Function
+
 // let dairyFree = () => {
 //     let dairyFreeArray = [];
 
@@ -191,3 +197,110 @@ console.log(cheeseFilter)
 // let someVariable = dairyFree()
 
 // console.log(someVariable)
+
+
+
+// Write a program that prints the numbers from 1 to 100. But for multiples of five (5, 10, 15, etc.) print "Chicken" instead of the number and for the multiples of seven (7, 14, 21, etc.) print "Monkey". For numbers which are multiples of both five and seven print "ChickenMonkey".
+
+function chickenMonkey () {
+
+    for (let currentNumber = 1; currentNumber <= 100; currentNumber++) {
+        // If the current number is a multiple of 5 AND 7 console ChickenMonkey
+        if (currentNumber % 5 === 0 && currentNumber %7 ===0) {
+            console.log("ChickenMonkey") 
+        // If the current number is a multiple of 5 ONLY console Chicken
+        } else if (currentNumber % 5 === 0) {
+            console.log("Chicken")
+        // If the current number is a multiple of 7 ONLY console Monkey
+        } else if (currentNumber % 7 === 0) {
+            console.log("Monkey")
+        // If the current number is not a multiple of 5 OR 7 console the number
+        } else {
+            console.log(currentNumber)
+        } 
+    }
+    }
+    // Variable to hold chickenMonkey() function
+    let chickenMonkeyCounter = chickenMonkey();
+    console.log(chickenMonkeyCounter)
+
+
+
+
+// A local nightclub is having a Battle of the Bands night in a few months. They expect many bands to sign up because the grand prize is $20,000. To make things easier on the nightclub management, they want each band to be assigned a number so that they can easily keep track of the order in which the bands will perform.
+
+// Your job is to write a function that accepts any band name as an argument. The function will increment a global variable by one each time it is invoked, and return that number, and the band name concatenated together.
+
+
+let bandNumber = 1
+
+const takeNumber = function (bandName) {
+    let bandOrder = `${bandNumber}. ${bandName}`;
+    bandNumber++;
+    return bandOrder;
+}
+
+const scum = takeNumber("Galactic Scum")
+console.log(scum)  // This should print "1. Galactic Scum" in the console
+
+const under = takeNumber("Underdogs")
+console.log(under)  // This should print "2. Underdogs" in the console
+
+
+const turtles = takeNumber("Turtles")
+console.log(turtles)
+
+
+
+
+
+// Cookout
+const hamburger = {
+	name: 'Hamburger',
+	type: 'beef',
+	cooked: false,
+}
+const zucchini = {
+	name: 'Zucchini',
+	type: 'vegetable',
+	cooked: false,
+}
+const chickenBreast = {
+	name: 'Chicken Breast',
+	type: 'chicken',
+	cooked: false,
+}
+const corn = {
+	name: 'Corn',
+	type: 'vegetable',
+	cooked: false,
+}
+const steak = {
+	name: 'Steak',
+	type: 'beef',
+	cooked: false,
+}
+
+// An array that is grouping the objects together.
+let foods = [hamburger, zucchini, chickenBreast, corn, steak];
+
+// An empty array that will store the objects after the `grill()` function cooks the food.
+let cookedFood = [];
+
+function grill (currentObject) {
+    // Modify the food so that it is cooked
+    currentObject.cooked = true;
+
+    // Put the cooked food into the appropriate array
+    cookedFood.push(currentObject);
+};
+
+function grillFunction(food) {
+    for (let g= 0; g < food.length; g++) {
+        grill(food[g]);
+    }
+}
+
+grillFunction(foods);
+console.log(foods)
+
